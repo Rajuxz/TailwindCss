@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="practise.css">
+    <title>Practice | Clone</title>
+</head>
+<body class="bg-blue-600 font-[Poppins]">
+    <!-- Toggle menu -->
+    <span class="absolute text-white text-4xl top-5 left-4 cursor-pointer" onclick="toggleSidebar()">
+        <i class="fa-solid fa-bars bg-gray-700 rounded-lg px-2"></i>
+    </span>
+
+    <!-- Toggle menu ends here-->
+
+    <!-- Sidebar starts -->
+    <div class="sidebar fixed top-0 bottom-0 w-[310px] overflow-y-auto text-center bg-gray-900 lg:left-0 left-[-310px]">
+        <!-- Sidebar header -->
+        <div class="text-gray-50 text-xl">
+            <div class="p-2.5 mt-1 flex flex-center ml-1">
+                <i class="fa-solid fa-gear px-2 py-1 mr-1 bg-blue-800 rounded-md"></i>
+                <h1 class="text-white">Sidebar</h1>
+                <i class="fa-solid fa-xmark px-2 mt-1.5 ml-[130px] text-blue cursor-pointer" onclick="toggleSidebar()"></i>
+            </div>
+            <hr class="my-2 text-gray-600">
+        </div>
+        <!-- Sidebar header ends here -->
+        <!-- Search box -->
+        <div class="p-2.5 mt-3 ml-1 mr-1 flex items-center rounded-md px-4 cursor-pointer bg-gray-700 text-white">
+            <i class="fa-solid fa-magnifying-glass text-sm"></i>
+            <input type="text" name="search" id="search" placeholder="Search" class="text-[15px] ml-4 w-full bg-transparent focus:outline-none">
+        </div>
+        <!-- Search box ends here -->
+        <!-- Home and Bookmark Section -->
+        <div class="p-2.5 mt-3 ml-1 mr-1 flex items-center rounded-md px-4 cursor-pointer text-white hover:bg-blue-600 duration-300">
+            <i class="fa-solid fa-house text-sm"></i>
+            <span class="text-[15px] mt-1 ml-2 text-gray-200">Home</span>            
+        </div>
+        <div class="p-2.5 mt-3 ml-1 mr-1 flex items-center rounded-md px-4 cursor-pointer text-white hover:bg-blue-600 duration-300">
+            <i class="fa-solid fa-bookmark text-sm"></i>
+            <span class="text-[15px] mt-1 ml-2 text-gray-200">Bookmark</span>            
+        </div>
+        <hr class="my-2 text-gray-400">
+        <!-- Home and Bookmark Section ends here -->
+        <!-- Chat box -->
+        <div class="p-2.5 mt-3 ml-1 mr-1 flex items-center rounded-md px-4 cursor-pointer text-white hover:bg-blue-600 duration-300" onclick="dropdown()">
+            <i class="fa-regular fa-comment"></i>
+            <div class="flex justify-between w-full items-center">
+                <span class="ml-2">Chatbox</span>
+                <span class="text-sm rotate-0" id="arrow">    
+                    <i class="fa-solid fa-chevron-down"></i>
+                </span>
+            </div>         
+        </div>
+        <!-- Chat dropdown -->
+        <div class="hidden text-gray-200 text-left text-sm font-thin mx-auto mt-2 w-4/5" id="submenu">
+            <h1 class="cursor-pointer p-2 hover:bg-gray-700 rounded-md duration-300">Social</h1>
+            <h1 class="cursor-pointer p-2 hover:bg-gray-700 rounded-md duration-300">Personal</h1>
+            <h1 class="cursor-pointer p-2 hover:bg-gray-700 rounded-md duration-300">Friends</h1>
+        </div>
+        <!-- Chat dropdown ends here-->
+        <!-- Chat box ends here -->
+        <!-- Analytics -->
+        <div class="p-2.5 mt-3 ml-1 mr-1 flex items-center rounded-md px-4 cursor-pointer text-white hover:bg-blue-600 duration-300">
+            <i class="fa-solid fa-chart-pie"></i>
+            <span class="text-[15px] mt-1 ml-2 text-gray-200">Analytics</span>            
+        </div>
+        <!-- Analytics ends here -->
+        <!-- Schedule item -->
+        <div class="p-2.5 mt-3 ml-1 mr-1 flex items-center rounded-md px-4 cursor-pointer text-white hover:bg-blue-600 duration-300">
+            <i class="fa-solid fa-business-time"></i>
+            <span class="text-[15px] mt-1 ml-2 text-gray-200">Schedule</span>            
+        </div>
+        <!-- Schedule item ends here -->
+        <div class="p-2.5 mt-3 ml-1 mr-1 flex items-center rounded-md px-4 cursor-pointer text-white hover:bg-blue-600 duration-300">
+            <i class="fa-solid fa-user-tie"></i>
+            <span class="text-[15px] mt-1 ml-2 text-gray-200">Customers</span>            
+        </div>
+        <!-- Logout button -->
+        <hr class="my-2 text-gray-400">
+        <div class="p-2.5 mt-3 ml-1 mr-1 flex items-center rounded-md px-4 cursor-pointer text-white hover:bg-blue-600 duration-300">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span class="text-[15px] mt-1 ml-2 text-gray-200">Logout</span>            
+        </div>
+        <!-- Logout button ends here -->
+    </div>
+    <!-- Sidebar ends here -->
+
+    <script>
+        const dropdown = function(){
+            document.querySelector('#submenu').classList.toggle('hidden');
+            document.querySelector('#arrow').classList.toggle('rotate-180')
+        }
+
+        const toggleSidebar = function(){
+            document.querySelector('.sidebar').classList.toggle('left-[-310px]');
+        }
+    </script>
+</body>
+</html>
